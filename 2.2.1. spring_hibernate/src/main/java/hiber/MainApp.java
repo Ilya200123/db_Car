@@ -16,6 +16,8 @@ public class MainApp {
 
       UserService userService = context.getBean(UserService.class);
 
+      List<User> users = userService.listUsers();
+
       Car car1 = new Car("Toyota Camry", 2020);
       Car car2 = new Car("Honda Accord", 2019);
       Car car3 = new Car("Ford Mustang", 2021);
@@ -35,8 +37,6 @@ public class MainApp {
       userService.add(user2);
       userService.add(user3);
       userService.add(user4);
-
-      List<User> users = userService.listUsers();
 
       for (User user : users) {
          System.out.println("Id = "+user.getId());
